@@ -29,7 +29,7 @@ def procesar_orden():
             model="llama3-8b-8192", 
             response_format={"type": "json_object"}
         )
-        return chat_completion.choices.message.content
+        return chat_completion.choices[0].message.content
     except Exception as e:
         return jsonify({"accion": "hablar", "comando": "ninguno", "respuesta": "Error en el procesamiento de la orden."})
 
